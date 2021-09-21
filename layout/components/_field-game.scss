@@ -1,0 +1,32 @@
+.field-game {
+
+    &__wrapper-outher {
+        overflow: hidden;
+        @include media(">large") {
+            display: block;
+            background-image: url("../../assets/background.jpg");
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100%;
+        }
+    }
+
+    &__wrapper-internal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+
+        background-color: orange;
+        padding-right: 3rem;
+
+        @include media(">large") {
+            border-radius: 10px;
+            padding-right: 0rem;
+        } 
+    }
+}
