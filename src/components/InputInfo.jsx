@@ -16,7 +16,7 @@ function InputInfo({label, ...props}) {
     <div className = {classNames("input-info", props.className)}>
         <div className = { block("wrapper") }>
             <label htmlFor={props.id}>{label}</label>
-            <input id = {props.id} {...field} autoComplete="new-password" type="text" />
+            <input id = {props.id} {...field} autoComplete="off" type="text" />
             {meta.touched && meta.error ? (
                 <div className={block("error")}>{meta.error}</div>
             ) : null}

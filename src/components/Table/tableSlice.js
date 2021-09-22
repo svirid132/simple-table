@@ -63,6 +63,18 @@ export const {
     editUser,
 } = tableSlice.actions
 
+export const selectUserOnId = (id) => (state) => {
+    for (const user of state.table.users) {
+        if (user.id === id) {
+            return user;
+        }
+    }
+    return null;
+}
+
+export const selectUsers= () => (state) => {
+    return state.table.users;
+}
 
 export default tableSlice.reducer
 
