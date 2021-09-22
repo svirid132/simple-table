@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import ModalForm from './components/ModalForm';
+
+const inputProps = [
+  {
+    name: "lastName",
+    label: "Фамилия"
+  },
+  {
+    name: "name",
+    label: "Имя"
+  },
+  {
+    name: "middleName",
+    label: "Отчество"
+  },
+  {
+    name: "email",
+    label: "E-mail"
+  },
+  {
+    name: "login",
+    label: "Логин"
+  },
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModalForm forInputs = {inputProps} onSubmit = {() => alert("this!!!")}/>
   );
 }
 
