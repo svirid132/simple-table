@@ -1,0 +1,58 @@
+.table {
+
+    height: 100vh;
+
+    &__wrapper {
+        position: relative;
+        background-color: #E5E5E5;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        overflow: auto;
+    }
+
+    &__btn-add {
+        height: 30px;
+    }
+
+    &__caption {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+
+    &__table {
+        border-collapse: separate;
+        border-spacing: 0 7px; 
+        color: #353D4B;
+        width: 100%;
+
+        & tr {
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        & th {
+            text-align: start;
+            padding: 7px 20px 7px; 
+        }
+
+        & td {
+            padding: 7px 20px 7px; 
+        }
+
+        & td:last-child {
+            text-align: end;
+        }
+    }
+
+    &__btns {
+        display: inline-flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        & li {
+            margin: 2px;
+        }
+    }
+}

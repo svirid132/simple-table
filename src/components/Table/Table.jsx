@@ -11,7 +11,6 @@ const headers = [
     "E-mail",
     "Логин",
     "",
-    "",
 ]
 
 const cn = withNaming({ e: '__', m: '--' });
@@ -33,8 +32,12 @@ function Table({onAddUser, onDeleteUser, onEditUser, className}) {
             <td>{user.middleName}</td>
             <td>{user.email}</td>
             <td>{user.login}</td>
-            <td className = {block("btn")}><button onClick={() => onEditUser(user.id)}>123</button></td>
-            <td className = {block("btn")}><button onClick={() => onDeleteUser(user.id)}>567</button></td>
+            <td className = {block("td-btns")}>
+                <ul className = {block("btns")}>
+                    <li><button onClick={() => onEditUser(user.id)}>123</button></li>
+                    <li><button onClick={() => onDeleteUser(user.id)}>567</button></li>
+                </ul>
+            </td>
         </tr>
         )
     });
@@ -42,9 +45,13 @@ function Table({onAddUser, onDeleteUser, onEditUser, className}) {
     return (
     <div className = {classNames("table", className)}>
         <div className = {block("wrapper")}>
-            <button className={block("btn-add")} onClick = {() => onAddUser()}>Добавить</button>
             <table className = {block("table")}>
-                <caption>Полизователи</caption> 
+                <caption>
+                    <div className ={block("caption")}>
+                        <h3>Полизователи</h3>
+                        <button className={block("btn-add")} onClick = {() => onAddUser()}>Добавить</button>
+                    </div>
+                </caption> 
                 <thead>
                     <tr>{headerElems}</tr>
                 </thead>
