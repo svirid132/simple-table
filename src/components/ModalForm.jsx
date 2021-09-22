@@ -1,5 +1,5 @@
 import { Form, Formik } from 'formik';
-import React, {useMemo, useState} from 'react'
+import React, {useMemo} from 'react'
 import InputInfo from './InputInfo';
 import * as Yup from "yup";
 import classNames from 'classnames';
@@ -10,13 +10,13 @@ function ModalForm({ title, forInputs, buttonText, className, onSubmit, onClose 
     const InputInfoElems = forInputs.map((info, index) => {
         return (
             <li key={index}>
-                <InputInfo id = {info.name} name = {info.name} label = {info.label}/>
+                <InputInfo id = {info.name} name = {info.name} label = {info.label} placeholder = {info.placeholder}/>
             </li>
         )
     });
 
     const initialValues = useMemo(() => {
-        const initialValues = new Object();
+        const initialValues = {};
         forInputs.forEach(info => {
             initialValues[info.name] = info.value || "";
         });
@@ -24,7 +24,7 @@ function ModalForm({ title, forInputs, buttonText, className, onSubmit, onClose 
     }, [forInputs]);
 
     const validationSchema = useMemo( () => {
-        const validationSchema = new Object();
+        const validationSchema = {};
         forInputs.forEach(info => {
             if (info.name === "email") { 
                 validationSchema[info.name] = Yup.string().email('Невалидная почта').required('Обязательное поле для заполнения');
@@ -52,7 +52,7 @@ function ModalForm({ title, forInputs, buttonText, className, onSubmit, onClose 
                     title={title} 
                     wrapper = {<Form />}
                     main = {{type: "ul", elem: <ul>{ InputInfoElems }</ul>} }
-                    btns = {<button type="submit" disabled = {!(props.isValid && props.dirty)}>{buttonText}</button>}
+                    btns = {<button data-count="single" type="submit" disabled = {!(props.isValid && props.dirty)}>{buttonText}</button>}
                     className = {className}
                     onClose = {() => onClose()}
                 />

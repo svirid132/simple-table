@@ -44,12 +44,10 @@ describe("Test on logic table", () => {
             login: "user4",
         }
         const nextState = tableReducer(initialState, addUser(newUser));
-        const newNewUser = produce(newUser, (draft) => {
-            draft.id = 4
-        });
+        newUser.id = 4
         const equalState = produce(initialState, (draft) => {
             ++draft.currentId;
-            draft.users.push(newNewUser);
+            draft.users.unshift(newUser);
         });
         expect(nextState).toEqual(equalState);
         }

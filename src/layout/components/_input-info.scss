@@ -2,13 +2,32 @@
     &__wrapper {
         display: flex;
         flex-direction: column;
+        position: relative;
+    }
+
+    &__wrapper--error {
+
+        & label {
+            color: red;
+        }
     }
 
     & label {
-
+        margin-bottom: 7px;
     }
 
     & input {
+        background-color: #F9FAFC;
+        border-radius: 5px;
+        border: 2px solid #EBECEF;
+        padding-left: 5px;
+        line-height: 1.4rem;
+    }
 
+    &__error {
+        position: absolute;
+        bottom: -0.8rem;
+        font-size: 0.8rem;
+        color: red;
     }
 }

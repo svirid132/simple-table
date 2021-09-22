@@ -14,7 +14,7 @@ function Alert({title, onClose, wrapper, main, btns, className}) {
         <>
             <div className = {block("title")}>
                 <h3>{title}</h3>
-                {onClose && <button type="button" className = {block("btn-close")} onClick = {() => onClose()}>close</button>}
+                {onClose && <button type="button" className = {block("btn-close")} onClick = {() => onClose()}><span className ={"icon-close"}></span></button>}
             </div>
             { main.type === "ul" && React.cloneElement(mainElem, {...mainElem.props, className: classNames( mainElem.props.className, block("list"))})}
             { main.type === "p" && React.cloneElement(mainElem, {...mainElem.props, className: classNames( mainElem.props.className, block("message")) }) }

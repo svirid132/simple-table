@@ -5,9 +5,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%;
     }
 
     &__wrapper {
+        border-radius: 10px;
         position: relative;
         width: 30%;
         min-width: 500px;
@@ -16,6 +18,8 @@
     }
 
     &__title {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         background-color: #353D4B;
         color: white;
         display: flex;
@@ -30,25 +34,24 @@
         & li {
             list-style-type: none;
             margin-bottom: 10px;
-
-            & label {
-                margin-bottom: 7px;
-            }
-
-            & input {
-                background-color: #F9FAFC;
-            }
         }
     }
 
     &__message {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
     }
 
     &__btn-close {
         position: absolute;
-        top: 10px;
+        font-size: 1.2rem;
+        top: 15px;
         right: 20px;
+        background-color: rgba(black, 0);
+        border: none;
+        cursor: pointer;
     }
 
     &__wrapper-btns {
@@ -57,9 +60,51 @@
         display: flex;
         justify-content: end;
         align-items: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     &__btns {
         margin-right: 30px; 
+
+
+        &[data-count = "single"]  { 
+            background-color: #4587ED;
+            color: white;
+            height: 30px;
+            width: 150px;
+            border-radius: 5px;
+            border: none;
+            &:disabled {
+                background-color: rgba(#4587ED, 0.6);
+            }
+        }
+
+        &[data-count = "multiple"] {
+            display: inline-flex;
+            list-style-type: none;
+
+            & button {
+                height: 30px;
+                width: 150px;
+                border-radius: 5px;
+                border: none;
+            }
+
+            & li:first-child {
+                button {
+                    color: #6D7885;
+                    background-color: #E4E5E8;
+                }
+            }
+
+            & li:last-child{
+                margin-left: 10px;
+                button {
+                    background-color: #4587ED;
+                    color: white;
+                }
+            }
+        }
     }
 }

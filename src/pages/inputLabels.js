@@ -2,23 +2,28 @@
 const inputLabels = [
     {
       name: "lastName",
-      label: "Фамилия"
+      label: "Фамилия",
+      placeholder: "Введите фамилию",
     },
     {
       name: "name",
-      label: "Имя"
+      label: "Имя",
+      placeholder: "Введите имя",
     },
     {
       name: "middleName",
-      label: "Отчество"
+      label: "Отчество",
+      placeholder: "Введите отчество",
     },
     {
       name: "email",
-      label: "E-mail"
+      label: "E-mail",
+      placeholder: "Введите электронную почту",
     },
     {
       name: "login",
-      label: "Логин"
+      label: "Логин",
+      placeholder: "Введите логин",
     },
 ]
 

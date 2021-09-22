@@ -1,7 +1,5 @@
 .table {
 
-    height: 100vh;
-
     &__wrapper {
         position: relative;
         background-color: #E5E5E5;
@@ -12,7 +10,16 @@
     }
 
     &__btn-add {
-        height: 30px;
+        height: 40px;
+        background-color: #4587ED;
+        color: white;
+        vertical-align: middle;
+        border-radius: 10px;
+        border: none;
+        padding-right: 10px;
+        cursor: pointer;
+
+        & span { margin-right: 5px; }
     }
 
     &__caption {
@@ -54,5 +61,12 @@
         & li {
             margin: 2px;
         }
+
+        & button {
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
     }
 }

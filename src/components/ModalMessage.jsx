@@ -5,12 +5,12 @@ function ModalMessage({title, message, textBtn, onAccept, onClose, className}) {
 
     const messageElem = <p>{message}</p>
     const btns = 
-        <ul>
-            <button onClick = {() => onClose()}>{"Отмена"}</button>
-            <button onClick = {() => {
+        <ul data-count="multiple">
+            <li><button onClick = {() => onClose()}>{"Отмена"}</button></li>
+            <li><button onClick = {() => {
                 onAccept();
                 setTimeout(() => onClose(), 0);
-            }}>{textBtn}</button>
+            }}>{textBtn}</button></li>
         </ul>
 
     return (

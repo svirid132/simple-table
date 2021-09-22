@@ -34,8 +34,8 @@ function Table({onAddUser, onDeleteUser, onEditUser, className}) {
             <td>{user.login}</td>
             <td className = {block("td-btns")}>
                 <ul className = {block("btns")}>
-                    <li><button onClick={() => onEditUser(user.id)}>123</button></li>
-                    <li><button onClick={() => onDeleteUser(user.id)}>567</button></li>
+                    <li><button onClick={() => onEditUser(user.id)}><span className="icon-pencil"></span></button></li>
+                    <li><button onClick={() => onDeleteUser(user.id)}><span className="icon-remove"></span></button></li>
                 </ul>
             </td>
         </tr>
@@ -48,8 +48,8 @@ function Table({onAddUser, onDeleteUser, onEditUser, className}) {
             <table className = {block("table")}>
                 <caption>
                     <div className ={block("caption")}>
-                        <h3>Полизователи</h3>
-                        <button className={block("btn-add")} onClick = {() => onAddUser()}>Добавить</button>
+                        <h3>Пользователи</h3>
+                        <button className={block("btn-add")} onClick = {() => onAddUser()}><span className="icon-add"></span>Добавить</button>
                     </div>
                 </caption> 
                 <thead>

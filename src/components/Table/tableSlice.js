@@ -41,7 +41,7 @@ const tableSlice = createSlice({
             const newUser = produce(action.payload, (draft) => {
                 draft.id = state.currentId;
             });
-            users.push(newUser);
+            users.unshift(newUser);
         },
         removeUser(state, action) {
             const id = action.payload;

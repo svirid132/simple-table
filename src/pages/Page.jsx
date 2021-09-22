@@ -20,15 +20,16 @@ function Page() {
 
     const editingUser = useSelector(selectUserOnId(viewModalFormEdit.id));
 
-    let userInputs = useMemo(() => {
+    const userInputs = useMemo(() => {
         if (viewModalFormEdit.viewModal === false) return null;
-        const userInputs = inputLabels.map((inputLabel) => {
-            const name = inputLabel.name;
-            inputLabel.value = editingUser[name];
-            return inputLabel;
+        const userInputs = produce(inputLabels, (draft) => {
+            for (const inputLabel of draft) {
+                const name = inputLabel.name;
+                inputLabel.value = editingUser[name];
+            }
         });
         return userInputs;
-    }, [viewModalFormEdit]);
+    }, [viewModalFormEdit, editingUser]);
 
     return (
         <div className={"page"}>
